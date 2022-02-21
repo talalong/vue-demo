@@ -7,6 +7,7 @@ multiselect(
   open-direction="bottom"
   )
 p {{parentValue}}
+p lol
 </template>
 
 <script>
@@ -25,8 +26,10 @@ export default {
   components: {
      Multiselect
   },
-  mounted (){
-    this.selectedValue = this.parentValue
+  watch:{
+    parentValue (value) {
+      this.selectedValue = value
+    }
   }
 };
 </script>
